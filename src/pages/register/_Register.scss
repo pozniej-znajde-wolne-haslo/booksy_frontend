@@ -1,0 +1,21 @@
+@import '../../_config';
+
+.register-page {
+  height: 80vh;
+  @include flexbox(row, 0);
+  justify-content: center;
+  align-items: center;
+
+  @include singInAndUpForms(75%);
+  /* this value smaller on bigger screen screen !! */
+
+  /*   form {
+    button {
+      @extend .btn-primary;
+      @include btnColors(#90a4ae, #263238);
+      background-color: #263238;
+    }
+  } */
+}
+
+/* forms bigger on bigger screen --> too much white space !! */

@@ -1,0 +1,22 @@
+@import '../../_config';
+
+.pagination-container {
+  @include flexbox(row, 0.8rem);
+  justify-content: center;
+  margin-top: 4rem;
+  padding-bottom: 4rem;
+
+  li {
+    font-size: 1.6rem;
+    padding: 0 1px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .pagination-active-link {
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+  }
+}

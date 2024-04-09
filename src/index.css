@@ -1,0 +1,106 @@
+/* *** shared styles on the books-pages *** */
+/* .books-container {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin: 3.5rem 1rem 3rem 1rem;
+} */
+
+/* .bookCard-and-btns-container {
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  width: 32rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding-bottom: 1.5rem;
+} */
+
+.update-delete-book-msg {
+  padding: 3px 2px 1px 2px;
+  margin-bottom: 0.5rem;
+  background-color: #f2f0ec;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* *** BTNS *** */
+/* .cart-and-admin-btns-container {
+  display: flex;
+  gap: 1rem;
+} */
+
+.admin-btn-small {
+  width: 6.5rem;
+}
+
+/* .btn-bronze,
+.btn-steelblue {
+  font-family: 'Space_Grotesk';
+  border: 0;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 5px 15px;
+  color: #f6f5f3;
+  cursor: pointer;
+  padding: 5px 8px 7px 8px;
+} */
+
+.btn-bronze {
+  background-image: linear-gradient(#d59352, #7e4e1f);
+}
+
+.btn-bronze:hover {
+  background-image: linear-gradient(#d0ae94, #4c321d);
+}
+
+.btn-bronze:active {
+  background-image: linear-gradient(#d99d61, #7e4e1f);
+  transform: scale(1.2);
+}
+
+/* .btn-steelblue {
+  background-image: linear-gradient(#90a4ae, #263238);
+} */
+
+/* .btn-steelblue:hover {
+  background-image: linear-gradient(#abbaca, #0a0e10);
+} */
+
+/* .btn-steelblue:active {
+  background-image: linear-gradient(#a2b8c3, #36464f);
+  transform: scale(1.2);
+} */
+
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 1.6rem;
+  }
+
+  .update-delete-book-msg {
+    font-size: 1.5rem;
+  }
+}
+
+.continue-button {
+  border: 0;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 5px 15px;
+  color: #f6f5f3;
+  cursor: pointer;
+  padding: 5px 8px 7px 8px;
+  font-family: 'Space_Grotesk';
+  background-image: linear-gradient(#d59352, #7e4e1f);
+}
+.continue-button:hover {
+  background-image: linear-gradient(#d0ae94, #4c321d);
+}
+
+select {
+  background-color: #fff;
+}

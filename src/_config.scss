@@ -1,0 +1,97 @@
+@import './_utilities';
+
+@mixin flexbox($direction, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+@mixin btnColors($color1, $color2) {
+  background-color: linear-gradient($color1, $color2);
+}
+
+/* .btn-primary {
+  font-family: 'Karla';
+ 
+  font-size: 1.5rem;
+
+  border: 0;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 5px 15px;
+  color: #f6f5f3;
+  cursor: pointer;
+  padding: 5px 8px 7px 8px;
+} */
+
+/* .btn-steelblue {
+  background-image: linear-gradient(#90a4ae, #263238);
+
+  &:hover {
+    background-image: linear-gradient(#abbaca, #0a0e10);
+  }
+  &:active {
+    background-image: linear-gradient(#a2b8c3, #36464f);
+    transform: scale(0.9);
+  }
+}
+
+.btn-magenta {
+  background-image: linear-gradient(#e8a0ca, #4f0c32);
+
+  &:hover {
+    background-image: linear-gradient(#e27ab7, #491130);
+  }
+  &:active {
+    background-image: linear-gradient(#e8a0ca, #4f0c32);
+    transform: scale(0.9);
+  }
+} */
+
+@mixin singInAndUpForms($height) {
+  .form-container {
+    @include flexbox(column, 5rem);
+    justify-content: center;
+    align-items: center;
+    height: $height;
+    margin-bottom: 10rem;
+    padding: 0 5rem;
+    border: 1px solid rgb(190, 187, 187);
+    border-radius: 5px;
+    background: linear-gradient(
+      333deg,
+      rgba(228, 228, 235, 1) 0%,
+      rgba(210, 210, 215, 1) 35%,
+      rgba(227, 230, 233, 1) 100%
+    );
+
+    h2 {
+      font-family: 'Montserrat_Alternates';
+      font-size: 28px;
+      color: #3c4f58;
+    }
+
+    form {
+      @include flexbox(column, 1.5rem);
+      font-family: 'Karla';
+
+      p {
+        color: rgb(192, 15, 15);
+        font-size: 1.4rem;
+        text-align: center;
+        width: 250px;
+      }
+
+      input {
+        line-height: 1.8;
+        width: 250px;
+        text-align: center;
+        font-size: 1.6rem;
+      }
+
+      button {
+        @extend .btn-primary;
+        @extend .btn-steelblue;
+      }
+    }
+  }
+}

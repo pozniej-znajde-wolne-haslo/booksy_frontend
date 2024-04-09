@@ -1,0 +1,45 @@
+@import '../../_config';
+
+.search-form {
+  @include flexbox(row, 0);
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  font-size: 1.8rem;
+  grid-area: searchBar;
+  /* height: 7vh; */
+  /*  height: 10vh; */
+  padding-top: 3rem;
+
+  .search-input {
+    width: 70%;
+    /*  line-height: 2.2; */
+    height: 32px;
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-left: 10px;
+    font-family: 'Karla';
+    font-size: 1.7rem;
+  }
+
+  .search-btn {
+    /* border-left: 1px solid rgb(172, 169, 169); */
+    border: 1px solid rgb(172, 169, 169);
+    border-left: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #fff;
+    /*  background-color: #3c4f58; */
+    /*   width: 50px; */
+    /*  line-height: 1.6; */
+    height: 32px;
+    padding-top: 5px;
+    padding-left: 4px;
+    padding-right: 5px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

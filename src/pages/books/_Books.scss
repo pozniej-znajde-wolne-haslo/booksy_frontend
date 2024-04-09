@@ -1,0 +1,52 @@
+@import '../../_config';
+
+.search-genres-container {
+  @include flexbox(column, 1rem);
+  align-items: center;
+  /*   border-top: 1px solid #848d92; */
+  border-bottom: 1px solid #848d92;
+  padding: 2rem 0;
+
+  /* 
+  delete UL from Books.jsx !! */
+
+  .books-genres-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 3rem;
+    grid-row-gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    h3 {
+      /* font-family: 'Space_Grotesk'; */
+      font-family: 'Karla';
+      font-weight: 400;
+      /* font-size: 1.5rem; */
+
+      color: #263238;
+
+      &:nth-child(odd) {
+        text-align: right;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 550px) {
+  .search-genres-container {
+    .books-genres-container {
+      @include flexbox(row, 3rem);
+      justify-content: center;
+      flex-wrap: wrap;
+      line-height: 0.1;
+      padding: 2.5rem 1.1rem;
+
+      h3 {
+        /* font-size: 1.6rem; */
+        font-size: 1.7rem;
+      }
+    }
+  }
+}

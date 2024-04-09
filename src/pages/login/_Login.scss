@@ -1,0 +1,13 @@
+@import '../../config';
+
+.login-page {
+  /*  min-height: 55rem; */
+  height: 80vh;
+  @include flexbox(row, 0);
+  justify-content: center;
+  align-items: center;
+
+  @include singInAndUpForms(50%);
+}
+
+/* forms bigger on bigger screen --> too much white space !! */

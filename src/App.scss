@@ -1,0 +1,168 @@
+@import 'config';
+
+/*  .App {
+    height: 100%; 
+  @include flexbox(column, 0);
+  justify-content: space-between;
+  border: 1px solid green;
+}  */
+
+header {
+  border-bottom: 1px solid #848d92;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1;
+
+  nav {
+    @include flexbox(row, 2rem);
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 0 3rem;
+
+    .shop-logo {
+      font-weight: 400;
+      font-family: 'Great_Vibes';
+      letter-spacing: 1px;
+      font-size: 2.2rem;
+      color: #263238;
+      text-shadow: #90a4ae 1px 0 10px;
+      border: 1px solid red;
+    }
+
+    .y {
+      display: flex;
+      flex-direction: row;
+      gap: 0;
+    }
+    .z {
+      border: 1px solid red;
+    }
+
+    /*   ul {
+      padding-left: 2rem;
+    } */
+
+    .desktop-links {
+      display: none;
+    }
+
+    /* inside nav ??? */
+    .overlay {
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+
+      .modal {
+        background-color: #f4f4f4;
+
+        box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2), 0 7px 20px rgba(0, 0, 0, 0.17);
+        width: 100%;
+        height: 500px;
+        margin: 20% auto;
+        @include flexbox(column, 4rem);
+        align-items: center;
+
+        .closeBtn {
+          align-self: flex-end;
+          font-size: 35px;
+          margin-top: 10px;
+          margin-right: 20px;
+          color: #888;
+
+          &:hover {
+            cursor: pointer;
+            color: #000;
+          }
+        }
+
+        &-links {
+          @include flexbox(column, 4rem);
+          font-family: 'Karla';
+          font-size: 1.8rem;
+
+          li:hover {
+            color: #207191;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    /*  .burger-menu,
+    .mobile-nav {
+      cursor: pointer;
+    }
+
+    .overlay {
+      border: 1px solid red;
+      width: 100vw;
+      width: 150px;
+
+      background-color: #fff;
+      @include flexbox(column, 0);
+      align-items: flex-end;
+
+      .mobile-nav-links {
+        @include flexbox(column, 5px);
+      }
+    } */
+  }
+}
+
+footer {
+  @include flexbox(row, 15px);
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #848d92;
+  color: #3c4f58;
+  height: 10vh;
+
+  .footer-text {
+    font-family: 'Great_Vibes';
+    letter-spacing: 1px;
+    font-size: 2.2rem;
+    /*  line-height: 0.9; */
+    color: #263238;
+    text-shadow: #90a4ae 1px 0 10px;
+    /* margin-left: 0.5rem; */
+  }
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    nav {
+      .shop-logo {
+        /* font-size: 2.7rem; */
+        /* padding-left: 2.5rem; */
+      }
+      .burger-menu {
+        display: none;
+      }
+
+      .desktop-links {
+        font-family: 'Karla';
+        /* bold or thin ?? here and books-genre the same !! */
+        font-weight: 300;
+        /* if wszedzie 1.7rem, to zmien font w index.scss & delete einzelne .. */
+        font-size: 1.7rem;
+        gap: 5rem;
+        padding-right: 2.5rem;
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+
+        li:hover {
+          color: #207191;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@import '../../_config';
+@import '../../_utilities';
+
+.singleBook-page {
+  min-height: 80vh;
+
+  .bookCard-and-btns-container {
+    @include flexbox(column, 0);
+    align-items: center;
+    border-radius: 5px;
+    background: linear-gradient(
+      333deg,
+      rgb(242, 242, 237) 0%,
+      rgb(232, 232, 228) 35%,
+      rgb(229, 230, 232) 100%
+    );
+
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+      rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    width: 32rem;
+    margin: auto;
+    margin-top: 5rem;
+    padding-bottom: 1.5rem;
+
+    .cart-and-admin-btns-container {
+      @include flexbox(row, 8px);
+
+      button {
+        @extend .btn-primary;
+      }
+
+      .cart-btn {
+        @extend .btn-steelblue;
+      }
+
+      .admin-btn {
+        @extend .btn-magenta;
+      }
+    }
+  }
+
+  .singleBook-details {
+    @include flexbox(column, 0);
+    line-height: 2;
+    padding: 3rem;
+
+    h2 {
+      color: #3c4f58;
+      font-family: 'Montserrat_Alternates';
+      font-weight: 600;
+      font-size: 1.8rem;
+      line-height: 1.2;
+      margin-top: 2rem;
+    }
+
+    h3 {
+      color: #3c4f58;
+      margin-top: 1.5rem;
+    }
+
+    .show-hide-text {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #4f0c32;
+      border-bottom: 1px solid #4f0c32;
+      cursor: pointer;
+      padding: 0 2px;
+    }
+  }
+
+  .singleBook-reviews {
+    @include flexbox(column, 0);
+    line-height: 2;
+    padding: 3rem;
+
+    h3 {
+      color: #3c4f58;
+      margin-top: 1.5rem;
+    }
+  }
+}
