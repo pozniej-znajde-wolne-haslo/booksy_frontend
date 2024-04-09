@@ -52,7 +52,7 @@
     display: grid;
     grid-template-areas:
       'bookCover details '
-      'forms details'
+      'forms placeholder'
       'reviews reviews ';
     grid-template-rows: auto auto auto;
     grid-template-columns: 55% auto;

@@ -8,9 +8,11 @@ import { Context } from '../../context/Context';
 import UpdateBtnAdmin from '../../components/UpdateBtnAdmin';
 import UpdateBook from '../../components/updateBook/UpdateBook';
 import './_SingleBook.scss';
+import DeleteBook from '../deleteBook/DeleteBook';
 
 export default function SingleBook() {
-  const [reviews, setReviews] = useState(null);
+  //const [reviews, setReviews] = useState(null);
+  const [reviews, setReviews] = useState([]);
   const [deleteMSG, setDeleteMSG] = useState('');
   const [singleBook, setSingleBook] = useState(null);
   const { user, bookToUpdate, bookToDelete, setBookToDelete, updateSuccess } =
@@ -78,6 +80,7 @@ export default function SingleBook() {
         .catch((err) => console.log(err));
     }
   };
+  console.log(reviews);
 
   return (
     <>
@@ -101,8 +104,12 @@ export default function SingleBook() {
               </div>
             )}
             {bookToDelete?._id === singleBook._id && (
-              <div id='singleBook-reset-margin-forms'>
-                <div className='deleteBook-container'>
+              <div
+                id='singleBook-reset-margin-forms'
+                /* className='deleteBook-container' */
+              >
+                <DeleteBook book={singleBook} />
+                {/* <div>
                   {deleteMSG && (
                     <p className='update-delete-book-msg'>{deleteMSG}</p>
                   )}
@@ -126,7 +133,7 @@ export default function SingleBook() {
                       Cancel
                     </button>
                   </div>
-                </div>
+                </div> */}
               </div>
             )}
           </div>
@@ -179,6 +186,7 @@ export default function SingleBook() {
               )}
             </p>
           </div>
+          <div className='grid-placeholder'></div>
           <div className='singleBook-reviews'>
             <h3 className='singleBook-heading'>Reviews</h3>
             {reviews.length === 0 && <p>No reviews yet...</p>}
@@ -187,9 +195,9 @@ export default function SingleBook() {
                 reviews.map((review) => {
                   return (
                     <div key={review._id}>
-                      <h3 className='singleBook-reviewer'>
+                      <h4 className='singleBook-reviewer'>
                         {review?.userId?.firstName}
-                      </h3>
+                      </h4>
                       <ReviewStars rating={review.rating} />
                       <p className='singleBook-review-text'>{review?.text}</p>
                     </div>

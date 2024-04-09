@@ -39,16 +39,25 @@
     }
   }
 
+  .singleBook-admin-forms {
+    margin: auto;
+    /* why is it needed here ??!! */
+    margin-top: -5px;
+    width: 32rem;
+  }
+
   .singleBook-details {
     @include flexbox(column, 0);
+    justify-content: center;
     line-height: 2;
     padding: 3rem;
+    padding-bottom: 0;
 
     h2 {
       color: #3c4f58;
       font-family: 'Montserrat_Alternates';
       font-weight: 600;
-      font-size: 1.8rem;
+      font-size: 2rem;
       line-height: 1.2;
       margin-top: 2rem;
     }
@@ -72,10 +81,87 @@
     @include flexbox(column, 0);
     line-height: 2;
     padding: 3rem;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
 
-    h3 {
+    h4 {
       color: #3c4f58;
-      margin-top: 1.5rem;
+      /* font-weight: 800; */
+      margin-top: 1rem;
+    }
+  }
+}
+
+/* @media screen and (min-width: 650px) {
+  .singleBook-page {
+    .singleBook-admin-forms {
+      margin: auto;
+
+      width: 32rem;
+    }
+  }
+} */
+
+@media screen and (min-width: 768px) {
+  .singleBook-page {
+    .singleBook-details,
+    .singleBook-reviews {
+      padding-left: 9rem;
+      padding-right: 9rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .singleBook-page {
+    display: grid;
+    grid-template-areas:
+      'book details '
+      'forms placeholder'
+      'reviews reviews ';
+    grid-template-rows: 54rem auto auto;
+    grid-template-columns: auto auto;
+    grid-column-gap: 2.5rem;
+    /*   border: 1px solid red; */
+    padding-left: 5rem;
+
+    .bookcard-and-btns-container {
+      /*   margin-top: 1rem; */
+      grid-area: book;
+      /*  margin-left: 8rem; */
+      /*  border: 1px solid red; */
+      /*  margin-bottom: 10rem;
+      margin-bottom: 10rem; */
+    }
+    .singleBook-admin-forms {
+      grid-area: forms;
+      /*  margin-left: 4rem; */
+      /*  border: 1px solid red; */
+      margin-top: 0;
+    }
+    .singleBook-details {
+      grid-area: details;
+      /*  border: 1px solid red; */
+      padding-left: 0;
+      padding-bottom: 0;
+
+      /* display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 0; */
+    }
+
+    .grid-placeholder {
+      grid-area: placeholder;
+      /*   height: 1rem; */
+      /*   width: 100%; */
+    }
+
+    .singleBook-reviews {
+      grid-area: reviews;
+      /*  margin: 2rem 0; */
+      padding-top: 0;
+      padding-left: 0rem;
     }
   }
 }
