@@ -43,14 +43,22 @@ export default function Navbar() {
   return (
     <header>
       <nav>
-        <div className='y' onClick={hideUpdateDeleteBookForms}>
-          <p className='shop-logo'>
-            <NavLink /* className='shop-logo' */ to='/'>Booksy</NavLink>
-          </p>
-
-          <div className='z'>
+        <div
+          className='shop-logo-container'
+          onClick={hideUpdateDeleteBookForms}
+        >
+          <div className='shop-icon'>
             <BooksyLogo />
           </div>
+          <p /* id='bla' */>
+            <NavLink className='shop-name' to='/'>
+              Booksy
+            </NavLink>
+          </p>
+
+          {/*  <div className='z'>
+            <BooksyLogo />
+          </div> */}
         </div>
 
         <FaBars

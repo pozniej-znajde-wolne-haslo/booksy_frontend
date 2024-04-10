@@ -2,13 +2,13 @@
 @import '../../_utilities';
 
 .homepage {
-  height: 80vh;
+  height: 84vh;
   display: grid;
   grid-template-areas:
     'searchBar'
     'homepageContent';
   grid-template-rows: 10% 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: 1fr auto;
 
   .homepage-content {
     grid-area: homepageContent;
@@ -17,8 +17,9 @@
     /* space to border down / OR / overlapps it ??!!
     GRID on .homepage ?? */
     /* height: 73vh; */
-    height: 72vh;
-    margin-top: 2.5rem;
+    min-height: 74vh;
+
+    /* margin-top: 0.5rem; */
   }
 
   /* diff name here ??!! */
@@ -134,6 +135,7 @@
 @media screen and (min-width: 768px) {
   .homepage {
     .homepage-content {
+      min-height: 76vh;
       .image-container {
         .hero {
           width: 400px;

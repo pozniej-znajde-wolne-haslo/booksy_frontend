@@ -1,8 +1,8 @@
 export default function BooksyLogo() {
   return (
     <svg
-      height='100px'
-      width='100px'
+      height='70px'
+      width='70px'
       version='1.0'
       xmlns='http://www.w3.org/2000/svg'
       /* width='300.000000pt'

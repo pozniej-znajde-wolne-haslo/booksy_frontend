@@ -14,7 +14,7 @@ export default function Footer() {
       </p>
       <p onClick={hideUpdateDeleteBookForms}>
         <a
-          href='https://github.com/pozniej-znajde-wolne-haslo/final-project_backend'
+          href='https://github.com/pozniej-znajde-wolne-haslo'
           target='_blank'
           rel='noreferrer'
         >

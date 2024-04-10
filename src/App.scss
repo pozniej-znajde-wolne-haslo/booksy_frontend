@@ -18,26 +18,33 @@ header {
     @include flexbox(row, 2rem);
     justify-content: space-between;
     align-items: center;
-    height: 10vh;
-    padding: 0 3rem;
+    /* height: 10vh; */
+    height: 8vh;
+    min-height: 6rem;
+    /* padding: 0 3rem 0 0; */
+    padding-right: 3rem;
 
-    .shop-logo {
-      font-weight: 400;
-      font-family: 'Great_Vibes';
-      letter-spacing: 1px;
-      font-size: 2.2rem;
-      color: #263238;
-      text-shadow: #90a4ae 1px 0 10px;
-      border: 1px solid red;
-    }
+    .shop-logo-container {
+      @include flexbox(row, 0);
+      /*  display: flex;
+      flex-direction: row; */
+      align-items: center;
+      /*  gap: 0; */
+      .shop-icon {
+        padding-bottom: 0.8rem;
+      }
 
-    .y {
-      display: flex;
-      flex-direction: row;
-      gap: 0;
-    }
-    .z {
-      border: 1px solid red;
+      .shop-name {
+        font-weight: 400;
+        font-family: 'Great_Vibes';
+        letter-spacing: 1px;
+        font-size: 2.3rem;
+        color: #263238;
+        text-shadow: #90a4ae 1px 0 10px;
+        padding: 3rem;
+        /*  margin-top: 2rem; */
+        margin-left: -40px;
+      }
     }
 
     .basket-qty {
@@ -126,7 +133,9 @@ footer {
   align-items: center;
   border-top: 1px solid #848d92;
   color: #3c4f58;
-  height: 10vh;
+  /* height: 10vh; */
+  height: 8vh;
+  min-height: 6rem;
 
   .footer-text {
     font-family: 'Great_Vibes';
@@ -142,21 +151,20 @@ footer {
 @media screen and (min-width: 768px) {
   header {
     nav {
-      .shop-logo {
-        /* font-size: 2.7rem; */
-        /* padding-left: 2.5rem; */
-      }
+      padding-left: 2rem;
+
       .burger-menu {
         display: none;
       }
 
       .desktop-links {
         font-family: 'Karla';
+        color: #3c4f58;
         /* bold or thin ?? here and books-genre the same !! */
         font-weight: 300;
         /* if wszedzie 1.7rem, to zmien font w index.scss & delete einzelne .. */
         font-size: 1.7rem;
-        gap: 5rem;
+        gap: 4rem;
         padding-right: 2.5rem;
         flex-direction: row;
         display: flex;
