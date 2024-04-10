@@ -29,18 +29,13 @@ export default function Profile() {
   const navigate = useNavigate();
   // states for writing/editing reviews:
   const [userReviews, setUserReviews] = useState([]);
-  const [reviewsChange, setReviewsChange] = useState(null); // to fetch reviews after submitting a review
+  const [reviewsChange, setReviewsChange] = useState(null);
   const [renderOrders, setRenderOrders] = useState(false);
   const [showProfilePicForm, setShowProfilePicForm] = useState(false);
   const [showEditProfile, setShowEditProfile] = useState(false);
   const [showBookForm, setShowBookForm] = useState(false);
   const [activeProfileLink, setActiveProfileLink] = useState('');
   const [deleteAccount, setDeleteAccount] = useState(false);
-
-  // try weg z double review forms
-  // maybe call it review btn 2?? (compare to context..)
-  // mayve move it to container..
-  // set it to null in other places
   const [order, setOrder] = useState('');
 
   useEffect(() => {
@@ -51,7 +46,6 @@ export default function Profile() {
     }
   }, []);
 
-  // fetch reviews again, whenever one gets submitted:
   useEffect(() => {
     const token = sessionStorage.getItem('token');
     if (token) {
@@ -342,9 +336,6 @@ export default function Profile() {
             <>
               <div className='delete-account'>
                 <p className='confirm-delete'>
-                  {/* same name for sub-links ??!!
-                also in order history, edit profile --> and set them globally?
-                or color-variable.. in config-file */}
                   Do you really want to delete your account?
                 </p>
               </div>

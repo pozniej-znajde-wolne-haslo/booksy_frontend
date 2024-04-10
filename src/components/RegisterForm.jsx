@@ -38,9 +38,7 @@ function RegisterForm() {
     e.preventDefault();
 
     if (e.target.password.value !== e.target.reenterPassword.value) {
-      setErrorReEnterPW(
-        'Please make sure to enter the same password as above.'
-      );
+      setErrorReEnterPW('Please make sure to enter the same password as above');
     }
     if (e.target.password.value === e.target.reenterPassword.value) {
       const userData = {
@@ -108,14 +106,7 @@ function RegisterForm() {
           if (res.success) {
             toast.success('Profile updated successfully!');
             setUser(res.data);
-          } /* else {
-              setErrorMSGs(
-                res.message.errors.reduce((acc, item) => {
-                  acc[item.path] = item.msg;
-                  return acc;
-                }, {})
-              );
-            } */
+          }
         })
         .catch((err) => console.log(err));
     }
@@ -174,7 +165,7 @@ function RegisterForm() {
           onChange={onChange}
           onFocus={handleErrorsOnFlocus}
         />
-        <button /* className='btn-primary' */>Sign Up</button>
+        <button>Sign Up</button>
       </form>
     </div>
   );

@@ -15,7 +15,6 @@ export default function ThankYou() {
         <div className='thankyou-content'>
           <h2>{orderReceived}</h2>
           <p>Thank you for choosing our shop!</p>
-          {/* stye as BTN !! */}
           <button onClick={() => navigate('/')}>
             <FaHome />
             Back to Homepage

@@ -4,7 +4,6 @@
 .profile-page {
   min-height: 84vh;
   padding-bottom: 5rem;
-  /* no need for that - wehre does it come from ?? */
   font-family: 'Karla';
 
   .profile-user {
@@ -30,7 +29,7 @@
       h2 {
         font-family: 'Montserrat_Alternates';
       }
-      /* globaly KARLA ?? */
+
       p {
         font-family: 'Karla';
         font-size: 1.7rem;
@@ -97,7 +96,6 @@
                 color: rgb(192, 15, 15);
                 font-size: 1.4rem;
                 width: 270px;
-                /*   text-align: center; */
               }
             }
             input {
@@ -225,7 +223,6 @@
         .single-order-underline {
           width: 300px;
           border-bottom: 1px solid #848d92;
-          /*  padding-right: 1rem; */
         }
       }
     }
@@ -311,12 +308,6 @@
     .profile-user {
       margin-left: -5rem;
     }
-
-    /* make all comps margin auto ab here !!
-    but check what padding left there is! */
-    /* .uploadBook-container {
-      margin: auto;
-    } */
   }
 }
 

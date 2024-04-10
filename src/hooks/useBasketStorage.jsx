@@ -11,8 +11,6 @@ export const useBasketStorage = () => {
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
 
   useEffect(() => {
-    // console.log('LocalStorage', basket);
-
     localStorage.setItem(key, JSON.stringify(basket));
     forceUpdate();
   }, [basket]);
@@ -28,9 +26,7 @@ export const useBasketStorage = () => {
         newBasket.basketItems[matchedIndex].quantity += 1;
       } else {
         newBasket = {
-          //...newBasket, // shouldn't be basket here?
           ...basket,
-          // basketItems: [...newBasket.basketItems, createBasketItem(book)], // shouldn't be basket here?
           basketItems: [...basket.basketItems, createBasketItem(book)],
         };
       }

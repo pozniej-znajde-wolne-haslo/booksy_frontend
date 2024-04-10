@@ -25,30 +25,14 @@ export default function ReviewForm({
     }));
   };
 
+  const handleErrorOnFocus = () => {
+    if (ratingError !== '') setRatingError('');
+  };
+
   const handleAddReview = async (e) => {
     e.preventDefault();
     let newReview;
-    /* if (review !== '' && rating !== '') {
-      newReview = {
-        book: book._id,
-        text: review,
-        rating: Number(rating),
-        userId: user._id,
-      };
-    } else if (review !== '' && rating === '') {
-      newReview = {
-        book: book._id,
-        text: review,
-        userId: user._id,
-      };
-    } else if (rating !== '' && review === '') {
-      newReview = {
-        book: book._id,
-        rating: Number(rating),
-        userId: user._id,
-      };
-    } */
-    // old version: should be anough (error if no stars given !!)
+
     if (review !== '') {
       newReview = {
         book: book._id,
@@ -89,11 +73,6 @@ export default function ReviewForm({
     }
   };
 
-  // handler to make rating error MSG disappear again:
-  const handleErrorOnFocus = () => {
-    if (ratingError !== '') setRatingError('');
-  };
-
   const handleEditReview = async (e) => {
     e.preventDefault();
     let editedReview;
@@ -106,31 +85,35 @@ export default function ReviewForm({
       editedReview = { text: review };
     } else if (rating !== '' && review === '') {
       editedReview = { rating: Number(rating) };
+    } else {
+      setRatingError('Please enter your new rating');
     }
 
-    try {
-      const token = sessionStorage.getItem('token');
-      if (token) {
-        const reviewToEdit = userReviews.find((rev) => rev.book === book._id);
-        const res = await fetch(
-          `${import.meta.env.VITE_EDIT_REVIEW}/${reviewToEdit._id}`,
-          {
-            method: 'PATCH',
-            headers: { 'Content-Type': 'application/json', token: token },
-            body: JSON.stringify(editedReview),
-          }
-        );
-        if (res.ok) {
-          const data = await res.json();
-          if (data.success) {
-            toast.success('Review updated!');
-            setBookToReview(null);
-            setReviewBtn(null);
+    if (editedReview) {
+      try {
+        const token = sessionStorage.getItem('token');
+        if (token) {
+          const reviewToEdit = userReviews.find((rev) => rev.book === book._id);
+          const res = await fetch(
+            `${import.meta.env.VITE_EDIT_REVIEW}/${reviewToEdit._id}`,
+            {
+              method: 'PATCH',
+              headers: { 'Content-Type': 'application/json', token: token },
+              body: JSON.stringify(editedReview),
+            }
+          );
+          if (res.ok) {
+            const data = await res.json();
+            if (data.success) {
+              toast.success('Review updated!');
+              setBookToReview(null);
+              setReviewBtn(null);
+            }
           }
         }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
     }
   };
 

@@ -68,7 +68,7 @@ export default function Modal({
                 </>
               ) : (
                 <>
-                  <PiShoppingCartSimple /* fa-5x='true' */ size={24} />{' '}
+                  <PiShoppingCartSimple size={24} />{' '}
                   <span className='basket-qty'>
                     {basketItemsQty > 0 && basketItemsQty}
                   </span>

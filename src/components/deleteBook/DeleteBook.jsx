@@ -26,7 +26,6 @@ export default function DeleteBook({ book }) {
               setBookToDelete(null);
               setDeleteMSG('');
               setUpdateSuccess(updateSuccess ? false : true);
-              // not updating page atuomatically after deleting -- doch ne FN in the profile with UPDATE SUCCESS ??
             }, 2000);
           }
         })

@@ -23,7 +23,7 @@ export default function SearchBar() {
         type='submit'
         onClick={hideUpdateDeleteBookForms}
       >
-        <FaSearch size={21} color={'#3c4f58'} /* color={'#fff'} */ />
+        <FaSearch size={21} color={'#3c4f58'} />
       </button>
     </form>
   );

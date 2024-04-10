@@ -20,7 +20,6 @@ export default function Navbar() {
   const [showModal, setShowModal] = useState(false);
   const [basketLinkActive, setBasketLinkActive] = useState(false);
 
-  // (when Books-link clicked) - display all books again / go back to page 1 / hide update/delete book components
   const handleBooksDisplay = () => {
     setCurrentPage(1);
     hideUpdateDeleteBookForms();
@@ -50,15 +49,11 @@ export default function Navbar() {
           <div className='shop-icon'>
             <BooksyLogo />
           </div>
-          <p /* id='bla' */>
+          <p>
             <NavLink className='shop-name' to='/'>
               Booksy
             </NavLink>
           </p>
-
-          {/*  <div className='z'>
-            <BooksyLogo />
-          </div> */}
         </div>
 
         <FaBars
@@ -70,8 +65,6 @@ export default function Navbar() {
 
         {showModal && (
           <Modal
-            /*    showModal={showModal}
-            setShowModal={setShowModal} */
             toggleModal={toggleModal}
             basketLinkActive={basketLinkActive}
             setBasketLinkActive={setBasketLinkActive}
@@ -112,7 +105,7 @@ export default function Navbar() {
                 </>
               ) : (
                 <>
-                  <PiShoppingCartSimple /* fa-5x='true'  */ size={20} />
+                  <PiShoppingCartSimple size={20} />
                   <span className='basket-qty'>
                     {basketItemsQty > 0 && basketItemsQty}
                   </span>

@@ -1,6 +1,6 @@
-import { Context } from '../../context/Context';
-import BooksDisplay from '../BooksDisplay';
-import Pagination from '../pagination/Pagination';
+import { Context } from '../context/Context';
+import BooksDisplay from './BooksDisplay';
+import Pagination from './pagination/Pagination';
 import { useEffect, useContext } from 'react';
 
 export default function Selection() {

@@ -1,12 +1,12 @@
-import BookCard from '../bookCard/BookCard';
+import BookCard from './bookCard/BookCard';
 import { useContext, useEffect } from 'react';
-import { Context } from '../../context/Context';
-import CartBtn from '../CartBtn';
-import DeleteBtnAdmin from '../DeleteBtnAdmin';
-import DeleteBook from '../deleteBook/DeleteBook';
-import UpdateBtnAdmin from '../UpdateBtnAdmin';
-import UpdateBook from '../updateBook/UpdateBook';
-import Pagination from '../pagination/Pagination';
+import { Context } from '../context/Context';
+import CartBtn from './CartBtn';
+import DeleteBtnAdmin from './DeleteBtnAdmin';
+import DeleteBook from './deleteBook/DeleteBook';
+import UpdateBtnAdmin from './UpdateBtnAdmin';
+import UpdateBook from './updateBook/UpdateBook';
+import Pagination from './pagination/Pagination';
 
 export default function SearchResult() {
   const {

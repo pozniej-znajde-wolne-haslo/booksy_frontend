@@ -1,4 +1,4 @@
-import { useContext, /* useEffect, */ useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Context } from '../../context/Context';
 import AddressForm from '../../components/AddressForm';
@@ -6,13 +6,8 @@ import './_Checkout.scss';
 
 export default function Checkout() {
   const [showAddressForm, setShowAddressForm] = useState(false);
-  const {
-    user,
-    /* setUser, */ setOrderReceived,
-    basket,
-    setBasket,
-    setBasketItemsQty,
-  } = useContext(Context);
+  const { user, setOrderReceived, basket, setBasket, setBasketItemsQty } =
+    useContext(Context);
 
   const navigate = useNavigate();
 
@@ -30,7 +25,7 @@ export default function Checkout() {
         ' - ' +
         date.getHours() +
         ':' +
-        minutes; // how to get '00' and not '0' just one zero ??
+        minutes;
 
       let numOfBooksOrdered = [];
       let booksIDs = [];
@@ -70,19 +65,6 @@ export default function Checkout() {
       console.log(error);
     }
   };
-
-  // this causes fetch-loop !!
-
-  /*  useEffect(() => {
-    fetch(`http://localhost:8000/api/user/${user._id}`)
-      .then((res) => res.json())
-      .then((res) => {
-        if (res.success) {
-          setUser(res.data);
-        }
-      })
-      .catch((err) => console.log(err));
-  }, [user]); */
 
   return (
     <div className='checkout-page'>

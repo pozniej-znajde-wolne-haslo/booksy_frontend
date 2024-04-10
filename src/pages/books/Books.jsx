@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { Context } from '../../context/Context';
-import './_Books.scss';
 import SearchBar from '../../components/searchBar/SearchBar';
+import './_Books.scss';
 
 export default function Books() {
   const [genres, setGenres] = useState([]);
@@ -19,7 +19,7 @@ export default function Books() {
           }
         }
       } catch (error) {
-        //
+        console.log(error);
       }
     }
     getGenres();

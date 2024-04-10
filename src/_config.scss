@@ -10,43 +10,6 @@
   background-color: linear-gradient($color1, $color2);
 }
 
-/* .btn-primary {
-  font-family: 'Karla';
- 
-  font-size: 1.5rem;
-
-  border: 0;
-  border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0 5px 15px;
-  color: #f6f5f3;
-  cursor: pointer;
-  padding: 5px 8px 7px 8px;
-} */
-
-/* .btn-steelblue {
-  background-image: linear-gradient(#90a4ae, #263238);
-
-  &:hover {
-    background-image: linear-gradient(#abbaca, #0a0e10);
-  }
-  &:active {
-    background-image: linear-gradient(#a2b8c3, #36464f);
-    transform: scale(0.9);
-  }
-}
-
-.btn-magenta {
-  background-image: linear-gradient(#e8a0ca, #4f0c32);
-
-  &:hover {
-    background-image: linear-gradient(#e27ab7, #491130);
-  }
-  &:active {
-    background-image: linear-gradient(#e8a0ca, #4f0c32);
-    transform: scale(0.9);
-  }
-} */
-
 @mixin singInAndUpForms($width, $height) {
   .form-container {
     @include flexbox(column, 5rem);
@@ -54,7 +17,6 @@
     align-items: center;
     width: $width;
     height: $height;
-    /*  margin-bottom: 10rem; */
     padding: 0 5rem;
     border: 1px solid rgb(190, 187, 187);
     border: 1px solid rgb(147, 146, 146);

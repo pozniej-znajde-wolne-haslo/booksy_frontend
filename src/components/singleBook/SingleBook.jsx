@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import BookCard from '../../components/bookCard/BookCard';
-import { /* useNavigate, */ useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import CartBtn from '../../components/CartBtn';
 import { ReviewStars } from '../../components/ReviewStars';
 import DeleteBtnAdmin from '../../components/DeleteBtnAdmin';
@@ -11,22 +11,12 @@ import './_SingleBook.scss';
 import DeleteBook from '../deleteBook/DeleteBook';
 
 export default function SingleBook() {
-  //const [reviews, setReviews] = useState(null);
   const [reviews, setReviews] = useState([]);
-  /*  const [deleteMSG, setDeleteMSG] = useState(''); */
   const [singleBook, setSingleBook] = useState(null);
-  const {
-    user,
-    bookToUpdate,
-    bookToDelete,
-    /* setBookToDelete, */ updateSuccess,
-  } = useContext(Context);
+  const { user, bookToUpdate, bookToDelete, updateSuccess } =
+    useContext(Context);
   const [showBookText, setShowBookText] = useState(false);
   const { id } = useParams();
-
-  /*  const navigate = useNavigate();
-
-  const handleDeleteMode = () => setBookToDelete(null); */
 
   const fetchReviews = async () => {
     try {
@@ -63,28 +53,6 @@ export default function SingleBook() {
     fetchBook();
   }, [updateSuccess]);
 
-  /*   const deleteBook = () => {
-    const token = sessionStorage.getItem('token');
-    if (token) {
-      fetch(`${import.meta.env.VITE_DELETE_BOOK}/${singleBook._id}`, {
-        method: 'DELETE',
-        headers: { token: token },
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          if (res.success) {
-            setDeleteMSG(res.message);
-            setTimeout(() => {
-              navigate('/books/selection');
-              setBookToDelete(null);
-              setDeleteMSG('');
-            }, 2000);
-          }
-        })
-        .catch((err) => console.log(err));
-    }
-  }; */
-
   return (
     <>
       {singleBook && (
@@ -114,18 +82,19 @@ export default function SingleBook() {
             <p>by {singleBook.author}</p>
             <h3>Details</h3>
             <p>
-              <span> Publisher:</span> {singleBook.publisher}
+              <span className='book-details-caption'> Publisher:</span>{' '}
+              {singleBook.publisher}
             </p>
             <p>
-              <span>Published: </span>
+              <span className='book-details-caption'>Published: </span>
               {singleBook.year}
             </p>
             <p>
-              <span> Number of pages: </span>
+              <span className='book-details-caption'> Number of pages: </span>
               {singleBook?.pages}
             </p>
             <p>
-              <span>ISBN: </span>
+              <span className='book-details-caption'>ISBN: </span>
               {singleBook.ISBN}
             </p>
             <h3>Book description</h3>

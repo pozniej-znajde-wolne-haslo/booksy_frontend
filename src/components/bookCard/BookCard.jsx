@@ -25,7 +25,6 @@ export default function BookCard({ book }) {
           {book?.title.split(' ').length < 5
             ? book?.title
             : book?.title.split(' ').slice(0, 4).join(' ')}
-          {/*  {book?.title.split(' ').length > 4 ? '...' : ''} */}
           {book?.title.split(' ').length < 5 ? '' : '...'}
         </h2>
         <p>{book?.author}</p>

@@ -2,32 +2,19 @@
 @import '../../_utilities';
 
 .bookCard-container {
-  /*   border: 1px solid red; */
-
-  /* background-color: gray; */
-  /*  background-color: #eae8e8; */
   background: linear-gradient(
     333deg,
     rgb(242, 242, 237) 0%,
     rgb(232, 232, 228) 35%,
     rgb(229, 230, 232) 100%
   );
-
   width: 24rem;
-  /*  maybe for hover only over bookCard..
- width: 32rem;
- 
-  padding: 0 3rem; */
   height: 45rem;
-  /* height: 43rem; */
   cursor: pointer;
 
   .bookCover-container {
     justify-self: flex-start;
     margin: 3rem auto 1rem auto;
-    /* width: 60%; */
-    /*  height: 60%; */
-    /*  margin: auto; */
     width: 15rem;
     height: 24rem;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,

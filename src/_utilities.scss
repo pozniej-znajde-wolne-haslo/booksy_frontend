@@ -9,20 +9,13 @@
 }
 
 @font-face {
-  font-family: 'Space_Grotesk';
-  src: url('fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf');
-}
-
-@font-face {
   font-family: 'Karla';
   src: url('fonts/Karla/Karla-VariableFont_wght.ttf');
 }
 
 .btn-primary {
   font-family: 'Karla';
-  /* font-size: 1.6rem; */
   font-size: 1.5rem;
-  /* line-height: 1.5; */
   border: 0;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.3) 0 5px 15px;

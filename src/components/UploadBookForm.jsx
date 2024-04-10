@@ -32,7 +32,6 @@ export default function UploadBookForm({ setShowBookForm }) {
   return (
     <form className='upload-book-form' onSubmit={uploadBook}>
       <Toaster position='top-center' />
-      {/* <fieldset className='upload-book-fieldset'> */}
       <div className='form-section'>
         <label htmlFor='title'>Title</label>
         <input type='text' name='title' id='title' />
@@ -98,7 +97,6 @@ export default function UploadBookForm({ setShowBookForm }) {
           Cancel
         </button>
       </div>
-      {/*   </fieldset> */}
     </form>
   );
 }
