@@ -8,7 +8,8 @@
 }  */
 
 header {
-  border-bottom: 1px solid #848d92;
+  /*  border-bottom: 1px solid #848d92; */
+  border-bottom: 1px solid rgb(172, 169, 169);
   position: sticky;
   top: 0;
   background-color: #fff;
@@ -131,7 +132,8 @@ footer {
   @include flexbox(row, 15px);
   justify-content: center;
   align-items: center;
-  border-top: 1px solid #848d92;
+  /*  border-top: 1px solid #848d92; */
+  border-top: 1px solid rgb(172, 169, 169);
   color: #3c4f58;
   /* height: 10vh; */
   height: 8vh;

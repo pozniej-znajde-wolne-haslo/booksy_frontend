@@ -4,8 +4,9 @@
   @include flexbox(column, 1rem);
   align-items: center;
   /*   border-top: 1px solid #848d92; */
-  border-bottom: 1px solid #848d92;
-  padding: 2rem 0;
+  /*  border-bottom: 1px solid #848d92; */
+  border-bottom: 1px solid rgb(172, 169, 169);
+  padding: 0.5rem 0 4rem 0;
 
   /* 
   delete UL from Books.jsx !! */
@@ -15,9 +16,9 @@
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 3rem;
     grid-row-gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    /*   margin-bottom: 1.5rem; */
     padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    /*  padding-bottom: 1.5rem; */
 
     h3 {
       /* font-family: 'Space_Grotesk'; */
@@ -41,7 +42,8 @@
       justify-content: center;
       flex-wrap: wrap;
       line-height: 0.1;
-      padding: 2.5rem 1.1rem;
+      /* padding: 2.5rem 1.1rem 0 1.1rem; */
+      padding-top: 2.5rem;
 
       h3 {
         /* font-size: 1.6rem; */

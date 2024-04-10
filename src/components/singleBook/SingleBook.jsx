@@ -107,36 +107,8 @@ export default function SingleBook() {
               </div>
             )}
             {bookToDelete?._id === singleBook._id && (
-              <div
-                id='singleBook-reset-margin-forms'
-                /* className='deleteBook-container' */
-              >
+              <div id='singleBook-reset-margin-forms'>
                 <DeleteBook book={singleBook} />
-                {/* <div>
-                  {deleteMSG && (
-                    <p className='update-delete-book-msg'>{deleteMSG}</p>
-                  )}
-
-                  <p>
-                    Are you sure you want to remove this book from the
-                    shop&apos;s database?
-                  </p>
-                  <div className='deleteBook-btns-container'>
-                    <button
-                      className='btn-bronze admin-btn-small'
-                      onClick={deleteBook}
-                    >
-                      Yes
-                    </button>
-                    <button
-                      type='button'
-                      className='btn-steelblue admin-btn-small'
-                      onClick={handleDeleteMode}
-                    >
-                      Cancel
-                    </button>
-                  </div>
-                </div> */}
               </div>
             )}
           </div>
@@ -162,11 +134,11 @@ export default function SingleBook() {
             </p>
             <h3 className='singleBook-heading'>Book description</h3>
             <p>
-              {singleBook.description.split(' ').slice(0, 20).join(' ') + ' '}
+              {singleBook.description.split(' ').slice(0, 25).join(' ') + ' '}
               {showBookText ? (
                 <>
                   <span>
-                    {singleBook.description.split(' ').slice(20).join(' ') +
+                    {singleBook.description.split(' ').slice(25).join(' ') +
                       ' '}
                   </span>
                   <span

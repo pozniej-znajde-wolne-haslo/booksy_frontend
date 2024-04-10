@@ -71,6 +71,9 @@
     justify-content: center;
     margin-top: 0;
   }
+  .grid-placeholder {
+    grid-area: placeolder;
+  }
 
   .singleBook-title {
     margin-top: 0;
