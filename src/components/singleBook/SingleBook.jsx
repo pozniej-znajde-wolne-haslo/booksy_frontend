@@ -89,10 +89,7 @@ export default function SingleBook() {
     <>
       {singleBook && (
         <div className='singleBook-page'>
-          <div
-            className='bookCard-and-btns-container'
-            id='singleBook-reset-margin'
-          >
+          <div className='bookCard-and-btns-container'>
             <BookCard book={singleBook} />
             <div className='cart-and-admin-btns-container'>
               <CartBtn book={singleBook} />
@@ -102,37 +99,36 @@ export default function SingleBook() {
           </div>
           <div className='singleBook-admin-forms'>
             {bookToUpdate?._id === singleBook._id && (
-              <div id='singleBook-reset-margin-forms'>
+              <div>
                 <UpdateBook book={singleBook} />
               </div>
             )}
             {bookToDelete?._id === singleBook._id && (
-              <div id='singleBook-reset-margin-forms'>
+              <div>
                 <DeleteBook book={singleBook} />
               </div>
             )}
           </div>
           <div className='singleBook-details'>
-            <h2 className='singleBook-title'>{singleBook.title}</h2>
+            <h2>{singleBook.title}</h2>
             <p>by {singleBook.author}</p>
-            <h3 className='singleBook-heading'>Details</h3>
+            <h3>Details</h3>
             <p>
-              <span className='singleBook-span'> Publisher:</span>{' '}
-              {singleBook.publisher}
+              <span> Publisher:</span> {singleBook.publisher}
             </p>
             <p>
-              <span className='singleBook-span'>Published: </span>
+              <span>Published: </span>
               {singleBook.year}
             </p>
             <p>
-              <span className='singleBook-span'> Number of pages: </span>
+              <span> Number of pages: </span>
               {singleBook?.pages}
             </p>
             <p>
-              <span className='singleBook-span'>ISBN: </span>
+              <span>ISBN: </span>
               {singleBook.ISBN}
             </p>
-            <h3 className='singleBook-heading'>Book description</h3>
+            <h3>Book description</h3>
             <p>
               {singleBook.description.split(' ').slice(0, 25).join(' ') + ' '}
               {showBookText ? (
@@ -163,18 +159,16 @@ export default function SingleBook() {
           </div>
           <div className='grid-placeholder'></div>
           <div className='singleBook-reviews'>
-            <h3 className='singleBook-heading'>Reviews</h3>
+            <h3>Reviews</h3>
             {reviews.length === 0 && <p>No reviews yet...</p>}
             <div>
               {reviews &&
                 reviews.map((review) => {
                   return (
                     <div key={review._id}>
-                      <h4 className='singleBook-reviewer'>
-                        {review?.userId?.firstName}
-                      </h4>
+                      <h4>{review?.userId?.firstName}</h4>
                       <ReviewStars rating={review.rating} />
-                      <p className='singleBook-review-text'>{review?.text}</p>
+                      <p>{review?.text}</p>
                     </div>
                   );
                 })}
