@@ -14,6 +14,8 @@ export default function Navbar() {
     setCurrentPage,
     hideUpdateDeleteBookForms,
     setBasket,
+    basketItemsQty,
+    setBasketItemsQty,
   } = useContext(Context);
   const [showModal, setShowModal] = useState(false);
   const [basketLinkActive, setBasketLinkActive] = useState(false);
@@ -28,6 +30,7 @@ export default function Navbar() {
   const logout = () => {
     setUser(null);
     sessionStorage.removeItem('token');
+    setBasketItemsQty(0);
     setBasket(null);
     localStorage.removeItem('basket');
     setBasketLinkActive(false);
@@ -41,10 +44,8 @@ export default function Navbar() {
     <header>
       <nav>
         <div className='y' onClick={hideUpdateDeleteBookForms}>
-          <p>
-            <NavLink className='shop-logo' to='/'>
-              Booksy
-            </NavLink>
+          <p className='shop-logo'>
+            <NavLink /* className='shop-logo' */ to='/'>Booksy</NavLink>
           </p>
 
           <div className='z'>
@@ -87,6 +88,7 @@ export default function Navbar() {
             <NavLink to='/books/selection'>Books</NavLink>
           </li>
           <li
+            id='basket-icon'
             onClick={() => {
               hideUpdateDeleteBookForms;
               setBasketLinkActive(true);
@@ -94,9 +96,19 @@ export default function Navbar() {
           >
             <NavLink to='/cart'>
               {basketLinkActive ? (
-                <PiShoppingCartSimpleBold size={22} />
+                <>
+                  <PiShoppingCartSimpleBold size={22} />{' '}
+                  <span className='basket-qty'>
+                    {basketItemsQty > 0 && basketItemsQty}
+                  </span>
+                </>
               ) : (
-                <PiShoppingCartSimple /* fa-5x='true'  */ size={20} />
+                <>
+                  <PiShoppingCartSimple /* fa-5x='true'  */ size={20} />
+                  <span className='basket-qty'>
+                    {basketItemsQty > 0 && basketItemsQty}
+                  </span>
+                </>
               )}
             </NavLink>
           </li>

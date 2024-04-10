@@ -5,7 +5,8 @@ import { Context } from '../context/Context';
 const key = 'basket';
 
 export const useBasketStorage = () => {
-  const { basket, setBasket } = useContext(Context);
+  const { basket, setBasket, basketItemsQty, setBasketItemsQty } =
+    useContext(Context);
 
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
 
@@ -39,14 +40,26 @@ export const useBasketStorage = () => {
         0
       );
       setBasket({ ...newBasket, totalPrice });
+      setBasketItemsQty(basketItemsQty + 1);
     } else {
       setBasket(createBasket(book));
+      setBasketItemsQty(basketItemsQty + 1);
     }
   };
 
   const removeFromBasket = (id) => {
     if (basket) {
       let newBasket = basket;
+
+      const itemToRemoveIndex = basket.basketItems.findIndex(
+        (basketItem) => basketItem._id === id
+      );
+
+      if (itemToRemoveIndex !== -1) {
+        setBasketItemsQty(
+          basketItemsQty - basket.basketItems[itemToRemoveIndex].quantity
+        );
+      }
 
       const updatedBasketItems = basket.basketItems.filter(
         (book) => book._id !== id
@@ -81,6 +94,7 @@ export const useBasketStorage = () => {
         0
       );
       setBasket({ ...newBasket, totalPrice });
+      setBasketItemsQty(basketItemsQty - 1);
     }
   };
 
@@ -99,6 +113,7 @@ export const useBasketStorage = () => {
         0
       );
       setBasket({ ...newBasket, totalPrice });
+      setBasketItemsQty(basketItemsQty + 1);
     }
   };
 

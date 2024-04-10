@@ -22,6 +22,8 @@ export default function Profile() {
     setBookToReview,
     reviewBtn,
     setReviewBtn,
+    setBasketItemsQty,
+    setBasket,
   } = useContext(Context);
   const [userOrders, setUserOrders] = useState([]);
   const navigate = useNavigate();
@@ -60,7 +62,15 @@ export default function Profile() {
   const deleteUserAccount = () => {
     const token = sessionStorage.getItem('token');
     if (token) {
-      handleDelete(token, user, toast, setUser, navigate);
+      handleDelete(
+        token,
+        user,
+        toast,
+        setUser,
+        setBasketItemsQty,
+        setBasket,
+        navigate
+      );
     }
   };
 

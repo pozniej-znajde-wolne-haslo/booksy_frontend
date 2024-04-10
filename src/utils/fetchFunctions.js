@@ -33,7 +33,15 @@ export const fetchUserReviews = async (token, state) => {
 };
 
 // delete user account
-export const handleDelete = async (token, user, popUp, state, navigate) => {
+export const handleDelete = async (
+  token,
+  user,
+  popUp,
+  state,
+  resetBasketQty,
+  resetBasket,
+  navigate
+) => {
   try {
     const response = await fetch(
       `${import.meta.env.VITE_DELETE_USER}/${user._id}`,
@@ -46,6 +54,9 @@ export const handleDelete = async (token, user, popUp, state, navigate) => {
         setTimeout(() => {
           state(null);
           sessionStorage.removeItem('token');
+          resetBasketQty(0);
+          resetBasket(null);
+          localStorage.removeItem('basket');
           navigate('/');
         }, 2500);
       }

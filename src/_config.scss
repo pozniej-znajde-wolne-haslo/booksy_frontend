@@ -47,15 +47,17 @@
   }
 } */
 
-@mixin singInAndUpForms($height) {
+@mixin singInAndUpForms($width, $height) {
   .form-container {
     @include flexbox(column, 5rem);
     justify-content: center;
     align-items: center;
+    width: $width;
     height: $height;
-    margin-bottom: 10rem;
+    /*  margin-bottom: 10rem; */
     padding: 0 5rem;
     border: 1px solid rgb(190, 187, 187);
+    border: 1px solid rgb(147, 146, 146);
     border-radius: 5px;
     background: linear-gradient(
       333deg,

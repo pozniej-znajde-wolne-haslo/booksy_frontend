@@ -1,21 +1,22 @@
 @import '../../_config';
 
 .register-page {
-  height: 80vh;
   @include flexbox(row, 0);
   justify-content: center;
   align-items: center;
+  height: 80vh;
+  background: rgb(226, 233, 237);
+  background: linear-gradient(
+    90deg,
+    rgb(69, 90, 101) 5%,
+    rgb(229, 231, 232) 120%
+  );
 
-  @include singInAndUpForms(75%);
-  /* this value smaller on bigger screen screen !! */
-
-  /*   form {
-    button {
-      @extend .btn-primary;
-      @include btnColors(#90a4ae, #263238);
-      background-color: #263238;
-    }
-  } */
+  @include singInAndUpForms(350px, 85%);
 }
 
-/* forms bigger on bigger screen --> too much white space !! */
+@media screen and (min-width: 601px) {
+  .register-page {
+    @include singInAndUpForms(500px, 80%);
+  }
+}

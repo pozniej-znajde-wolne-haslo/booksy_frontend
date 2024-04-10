@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import BookCard from '../../components/bookCard/BookCard';
-import { useNavigate, useParams } from 'react-router-dom';
+import { /* useNavigate, */ useParams } from 'react-router-dom';
 import CartBtn from '../../components/CartBtn';
 import { ReviewStars } from '../../components/ReviewStars';
 import DeleteBtnAdmin from '../../components/DeleteBtnAdmin';
@@ -13,16 +13,20 @@ import DeleteBook from '../deleteBook/DeleteBook';
 export default function SingleBook() {
   //const [reviews, setReviews] = useState(null);
   const [reviews, setReviews] = useState([]);
-  const [deleteMSG, setDeleteMSG] = useState('');
+  /*  const [deleteMSG, setDeleteMSG] = useState(''); */
   const [singleBook, setSingleBook] = useState(null);
-  const { user, bookToUpdate, bookToDelete, setBookToDelete, updateSuccess } =
-    useContext(Context);
+  const {
+    user,
+    bookToUpdate,
+    bookToDelete,
+    /* setBookToDelete, */ updateSuccess,
+  } = useContext(Context);
   const [showBookText, setShowBookText] = useState(false);
   const { id } = useParams();
 
-  const navigate = useNavigate();
+  /*  const navigate = useNavigate();
 
-  const handleDeleteMode = () => setBookToDelete(null);
+  const handleDeleteMode = () => setBookToDelete(null); */
 
   const fetchReviews = async () => {
     try {
@@ -59,7 +63,7 @@ export default function SingleBook() {
     fetchBook();
   }, [updateSuccess]);
 
-  const deleteBook = () => {
+  /*   const deleteBook = () => {
     const token = sessionStorage.getItem('token');
     if (token) {
       fetch(`${import.meta.env.VITE_DELETE_BOOK}/${singleBook._id}`, {
@@ -79,8 +83,7 @@ export default function SingleBook() {
         })
         .catch((err) => console.log(err));
     }
-  };
-  console.log(reviews);
+  }; */
 
   return (
     <>

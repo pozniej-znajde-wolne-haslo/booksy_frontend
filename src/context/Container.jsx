@@ -19,6 +19,7 @@ export default function Container({ children }) {
   const [reviewBtn, setReviewBtn] = useState(null);
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const [basket, setBasket] = useState(getBasketFromStorage(key));
+  const [basketItemsQty, setBasketItemsQty] = useState(0);
 
   useEffect(() => {
     const token = sessionStorage.getItem('token');
@@ -49,6 +50,8 @@ export default function Container({ children }) {
           setBooksToGenre,
           basket,
           setBasket,
+          basketItemsQty,
+          setBasketItemsQty,
           orderReceived,
           setOrderReceived,
           bookToDelete,

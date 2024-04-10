@@ -6,8 +6,13 @@ import './_Checkout.scss';
 
 export default function Checkout() {
   const [showAddressForm, setShowAddressForm] = useState(false);
-  const { user, /* setUser, */ setOrderReceived, basket, setBasket } =
-    useContext(Context);
+  const {
+    user,
+    /* setUser, */ setOrderReceived,
+    basket,
+    setBasket,
+    setBasketItemsQty,
+  } = useContext(Context);
 
   const navigate = useNavigate();
 
@@ -55,6 +60,7 @@ export default function Checkout() {
           if (data.success) {
             setOrderReceived(data.message);
             setBasket(null);
+            setBasketItemsQty(0);
             localStorage.removeItem('basket');
             navigate('/thankyou');
           }

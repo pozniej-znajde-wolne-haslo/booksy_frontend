@@ -13,6 +13,8 @@ export default function Modal({
     user,
     setUser,
     setBasket,
+    basketItemsQty,
+    setBasketItemsQty,
     hideUpdateDeleteBookForms,
     handleBooksDisplay,
   } = useContext(Context);
@@ -20,6 +22,7 @@ export default function Modal({
   const logout = () => {
     setUser(null);
     sessionStorage.removeItem('token');
+    setBasketItemsQty(0);
     setBasket(null);
     localStorage.removeItem('basket');
     setBasketLinkActive(false);
@@ -57,9 +60,19 @@ export default function Modal({
           >
             <NavLink to='/cart'>
               {basketLinkActive ? (
-                <PiShoppingCartSimpleBold size={26} />
+                <>
+                  <PiShoppingCartSimpleBold size={26} />
+                  <span className='basket-qty'>
+                    {basketItemsQty > 0 && basketItemsQty}
+                  </span>{' '}
+                </>
               ) : (
-                <PiShoppingCartSimple /* fa-5x='true' */ size={24} />
+                <>
+                  <PiShoppingCartSimple /* fa-5x='true' */ size={24} />{' '}
+                  <span className='basket-qty'>
+                    {basketItemsQty > 0 && basketItemsQty}
+                  </span>
+                </>
               )}
             </NavLink>
           </li>

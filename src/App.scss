@@ -40,6 +40,10 @@ header {
       border: 1px solid red;
     }
 
+    .basket-qty {
+      font-size: 1.5rem;
+    }
+
     /*   ul {
       padding-left: 2rem;
     } */
@@ -161,6 +165,10 @@ footer {
         li:hover {
           color: #207191;
           text-decoration: underline;
+        }
+
+        #basket-icon {
+          line-height: 0.8;
         }
       }
     }
