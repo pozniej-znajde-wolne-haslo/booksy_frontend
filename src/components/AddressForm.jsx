@@ -4,7 +4,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import PropTypes from 'prop-types';
 
 export default function AddressForm({ showAddressForm, setShowAddressForm }) {
-  const { user, setUser } = useContext(Context);
+  const { user, setUser, verifyToken } = useContext(Context);
   const [formData, setFormData] = useState({
     street: '',
     zip: '',
@@ -52,7 +52,10 @@ export default function AddressForm({ showAddressForm, setShowAddressForm }) {
     }
   };
 
-  useEffect(() => {
+  /*  useEffect(() => {
+    // use verifytoken from container ??
+    // export the FN in container and use here??
+    // or another route for get ??
     fetch(`http://localhost:8000/api/user/${user._id}`)
       .then((res) => res.json())
       .then((res) => {
@@ -61,6 +64,13 @@ export default function AddressForm({ showAddressForm, setShowAddressForm }) {
         }
       })
       .catch((err) => console.log(err));
+  }, [showAddressForm]); */
+
+  useEffect(() => {
+    const token = sessionStorage.getItem('token');
+    if (token) {
+      verifyToken(token, setUser);
+    }
   }, [showAddressForm]);
 
   return (

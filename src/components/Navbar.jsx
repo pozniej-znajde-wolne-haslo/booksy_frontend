@@ -44,15 +44,19 @@ export default function Navbar() {
       <nav>
         <div
           className='shop-logo-container'
-          onClick={hideUpdateDeleteBookForms}
+          onClick={() => {
+            hideUpdateDeleteBookForms;
+            /* with navigate cursor pointer nie dziala on mobile screen */
+            navigate('/');
+          }}
         >
           <div className='shop-icon'>
             <BooksyLogo />
           </div>
-          <p>
-            <NavLink className='shop-name' to='/'>
-              Booksy
-            </NavLink>
+          <p className='shop-name'>
+            {/*  <NavLink className='shop-name' to='/'> */}
+            Booksy
+            {/*  </NavLink> */}
           </p>
         </div>
 

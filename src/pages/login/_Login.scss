@@ -6,6 +6,25 @@
   align-items: center;
   height: 84vh;
   background: rgb(226, 233, 237);
+  background: $login_register-gradient;
+
+  @include singInAndUpForms(350px, 70%);
+}
+
+@media screen and (min-width: 601px) {
+  .login-page {
+    @include singInAndUpForms(500px, 70%);
+  }
+}
+
+/* @import '../../config';
+
+.login-page {
+  @include flexbox(row, 0);
+  justify-content: center;
+  align-items: center;
+  height: 84vh;
+  background: rgb(226, 233, 237);
   background: linear-gradient(
     90deg,
     rgb(69, 90, 101) 5%,
@@ -20,3 +39,4 @@
     @include singInAndUpForms(500px, 70%);
   }
 }
+ */

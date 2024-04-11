@@ -16,6 +16,57 @@
   text-align: center;
   background-color: white;
   border: 1px solid rgb(233, 231, 231);
+  border-radius: $primary-border-radius;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background: $primary-linear-gradient;
+
+  .confirm-delete {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    color: $primary-font-color;
+  }
+
+  .update-delete-msg {
+    @extend .forms-msg;
+    /* color: rgb(192, 15, 15);
+    font-size: 1.4rem; */
+    text-align: center;
+  }
+
+  .deleteBook-btns-container {
+    @include flexbox(row, 1rem);
+    justify-content: center;
+    margin-top: 2rem;
+
+    button {
+      width: $primary-btn-width;
+    }
+
+    .delete-btn {
+      width: $primary-btn-width;
+    }
+  }
+}
+
+/* @import '../../_config';
+
+@media only screen and (max-width: 649px) {
+  .deleteBook-container {
+    margin: auto;
+    margin-top: 1rem;
+  }
+}
+
+.deleteBook-container {
+  width: 32rem;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  line-height: 1.4;
+  color: #454545;
+  text-align: center;
+  background-color: white;
+  border: 1px solid rgb(233, 231, 231);
   border-radius: 5px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -32,7 +83,6 @@
     color: #3c4f58;
   }
 
-  /* success MSG insetad in config ?? */
   .update-delete-msg {
     color: rgb(192, 15, 15);
     font-size: 1.4rem;
@@ -53,3 +103,4 @@
     }
   }
 }
+ */
