@@ -46,26 +46,29 @@ export default function Navbar() {
           className='shop-logo-container'
           onClick={() => {
             hideUpdateDeleteBookForms;
-            /* with navigate cursor pointer nie dziala on mobile screen */
             navigate('/');
           }}
         >
           <div className='shop-icon'>
             <BooksyLogo />
           </div>
-          <p className='shop-name'>
-            {/*  <NavLink className='shop-name' to='/'> */}
-            Booksy
-            {/*  </NavLink> */}
-          </p>
+          <p className='shop-name'>Booksy</p>
         </div>
 
-        <FaBars
-          size={24}
-          color={'#3c4f58'}
-          className='burger-menu'
-          onClick={toggleModal}
-        />
+        <div className='burger-menu'>
+          <NavLink to='/cart'>
+            <PiShoppingCartSimple size={23} />
+            <span className='basket-qty'>
+              {basketItemsQty > 0 && basketItemsQty}
+            </span>
+          </NavLink>
+          <FaBars
+            size={24}
+            color={'#3c4f58'}
+            /* className='burger-menu' */
+            onClick={toggleModal}
+          />
+        </div>
 
         {showModal && (
           <Modal

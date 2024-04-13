@@ -27,9 +27,7 @@ $login_register-gradient: linear-gradient(
   rgb(229, 231, 232) 120%
 );
 
-/* $primary-border-color: 1px solid rgb(172, 169, 169); */
 $primary-border: 1px solid rgb(172, 169, 169);
-/* $secondary-border-color: 1px solid rgb(190, 187, 187); */
 $secondary-border: 1px solid rgb(190, 187, 187);
 $primary-border-radius: 5px;
 
@@ -43,12 +41,55 @@ $primary-btn-width: 80px;
 
 @mixin singInAndUpForms($width, $height) {
   .form-container {
+    @include flexbox(column, 2rem);
+    justify-content: center;
+    align-items: center;
+    width: $width;
+    height: $height;
+    padding: 4rem 5rem;
+    border: 1px solid rgb(147, 146, 146);
+    border-radius: $primary-border-radius;
+    background: $secondary-linear-gradient;
+
+    h2 {
+      font-family: $secondary-font;
+      font-size: 28px;
+      color: $primary-font-color;
+    }
+
+    form {
+      @include flexbox(column, 1.1rem);
+
+      p {
+        @extend .forms-msg;
+        text-align: center;
+        width: 250px;
+      }
+
+      input {
+        line-height: 2.3;
+        width: 250px;
+        text-align: center;
+        font-size: 1.6rem;
+      }
+
+      button {
+        @extend .btn-primary;
+        @extend .btn-steelblue;
+        padding: 9px 8px 11px 8px;
+      }
+    }
+  }
+}
+
+@mixin desktopSignInAndUpForms($width, $height) {
+  .form-container {
     @include flexbox(column, 5rem);
     justify-content: center;
     align-items: center;
     width: $width;
     height: $height;
-    padding: 0 5rem;
+    /* padding: 6rem 5rem; */
     border: 1px solid rgb(147, 146, 146);
     border-radius: $primary-border-radius;
     background: $secondary-linear-gradient;
@@ -78,70 +119,8 @@ $primary-btn-width: 80px;
       button {
         @extend .btn-primary;
         @extend .btn-steelblue;
+        padding: 5px 8px 7px 8px;
       }
     }
   }
 }
-
-/* @import './_utilities';
-
-@mixin flexbox($direction, $gap) {
-  display: flex;
-  flex-direction: $direction;
-  gap: $gap;
-}
-
-@mixin btnColors($color1, $color2) {
-  background-color: linear-gradient($color1, $color2);
-}
-
-@mixin singInAndUpForms($width, $height) {
-  .form-container {
-    @include flexbox(column, 5rem);
-    justify-content: center;
-    align-items: center;
-    width: $width;
-    height: $height;
-    padding: 0 5rem;
-    border: 1px solid rgb(190, 187, 187);
-    border: 1px solid rgb(147, 146, 146);
-    border-radius: 5px;
-    background: linear-gradient(
-      333deg,
-      rgba(228, 228, 235, 1) 0%,
-      rgba(210, 210, 215, 1) 35%,
-      rgba(227, 230, 233, 1) 100%
-    );
-
-    h2 {
-      font-family: 'Montserrat_Alternates';
-      font-size: 28px;
-      color: #3c4f58;
-    }
-
-    form {
-      @include flexbox(column, 1.5rem);
-      font-family: 'Karla';
-
-      p {
-        color: rgb(192, 15, 15);
-        font-size: 1.4rem;
-        text-align: center;
-        width: 250px;
-      }
-
-      input {
-        line-height: 1.8;
-        width: 250px;
-        text-align: center;
-        font-size: 1.6rem;
-      }
-
-      button {
-        @extend .btn-primary;
-        @extend .btn-steelblue;
-      }
-    }
-  }
-}
- */

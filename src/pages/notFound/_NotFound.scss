@@ -6,8 +6,6 @@
   align-items: center;
   justify-content: center;
   height: 84vh;
-  /*  font-family: 'Karla';
-  font-size: 1.7rem; */
 
   h2 {
     font-family: $secondary-font;
@@ -19,32 +17,7 @@
     @include flexbox(row, 10px);
     align-items: center;
     @extend .btn-primary;
+    line-height: 1.8;
     @extend .btn-steelblue;
   }
 }
-
-/* @import '../../_config';
-@import '../../_utilities';
-
-.notFound-container {
-  @include flexbox(column, 3rem);
-  align-items: center;
-  justify-content: center;
-  height: 84vh;
-  font-family: 'Karla';
-  font-size: 1.7rem;
-
-  h2 {
-    font-family: 'Montserrat_Alternates';
-    font-size: 28px;
-    color: #3c4f58;
-  }
-
-  button {
-    @include flexbox(row, 10px);
-    align-items: center;
-    @extend .btn-primary;
-    @extend .btn-steelblue;
-  }
-}
- */

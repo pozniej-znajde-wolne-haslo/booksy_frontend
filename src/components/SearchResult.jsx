@@ -47,7 +47,7 @@ export default function SearchResult() {
         }
       }
     } catch (error) {
-      //
+      console.log(error);
     }
   };
 

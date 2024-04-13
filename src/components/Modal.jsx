@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Context } from '../context/Context';
 import { PiShoppingCartSimple, PiShoppingCartSimpleBold } from 'react-icons/pi';
 import PropTypes from 'prop-types';

@@ -52,20 +52,6 @@ export default function AddressForm({ showAddressForm, setShowAddressForm }) {
     }
   };
 
-  /*  useEffect(() => {
-    // use verifytoken from container ??
-    // export the FN in container and use here??
-    // or another route for get ??
-    fetch(`http://localhost:8000/api/user/${user._id}`)
-      .then((res) => res.json())
-      .then((res) => {
-        if (res.success) {
-          setUser(res.data);
-        }
-      })
-      .catch((err) => console.log(err));
-  }, [showAddressForm]); */
-
   useEffect(() => {
     const token = sessionStorage.getItem('token');
     if (token) {
